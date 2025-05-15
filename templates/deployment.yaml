@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  # Labels of deployment resource
+  labels:
+    app: nginx
+    tier: frontend
+    purpose: deployment
+spec:
+  replicas: {{ .Values.deployment.replicas }} # Assume this will change just for practise. Anyway we use HPA in production generally
+  selector:
+    matchLabels:
+      app: nginx
+      tier: frontend
+      purpose: deployment
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: frontend
+        purpose: deployment
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:{{ .Values.deployment.imageVersion }} # This changes frequently when new version releases every now and then
+        ports:
+        - containerPort: 80
+
+
+# Explanation of Core Sections:
+# - apiVersion: Specifies the Kubernetes API version.
+# - kind: Defines the resource type (Deployment).
+# - metadata: Provides identifying details like name, namespace, and labels.
+# - spec: Defines deployment details like replicas and selectors.
+# - template: Describes the structure of pods to be created.
+# - containers: Lists containers, specifying the image and ports.
