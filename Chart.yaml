@@ -10,3 +10,10 @@ appVersion: 1.2.0 # App Version
 # ✔ Version control → Helm allows easy upgrades and rollbacks of applications.
 # ✔ Reusable and customizable → You can override values without modifying the base configuration.
 # ✔ Manages dependencies → Helm automatically handles related resources like ConfigMaps, Secrets, and services
+
+# my-chart/
+# │── charts/        # Dependencies (other Helm Charts)
+# │── templates/     # Kubernetes manifests (YAML files)
+# │── values.yaml    # Default configuration values
+# │── Chart.yaml     # Metadata about the chart (name, version)
+# │── README.md      # Documentation
