@@ -3,3 +3,10 @@ name: nginx
 version: 1.0.0 # Chart Version
 description: This is for nginx deployment
 appVersion: 1.2.0 # App Version
+
+
+# Why Use Helm Charts?
+# ✔ Simplifies deployment → Instead of writing multiple YAML files, you use a single Helm Chart.
+# ✔ Version control → Helm allows easy upgrades and rollbacks of applications.
+# ✔ Reusable and customizable → You can override values without modifying the base configuration.
+# ✔ Manages dependencies → Helm automatically handles related resources like ConfigMaps, Secrets, and services
